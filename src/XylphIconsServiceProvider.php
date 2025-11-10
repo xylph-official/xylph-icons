@@ -3,7 +3,6 @@
 namespace Xylph\Icons;
 
 use Illuminate\Support\ServiceProvider;
-use Xylph\Icons\Commands\IconsInstall;
 
 class XylphIconsServiceProvider extends ServiceProvider
 {
@@ -28,13 +27,6 @@ class XylphIconsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/resources/views/components' => resource_path('views/components'),
         ], 'xylph-icons-components');
-
-        // Commands
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                IconsInstall::class,
-            ]);
-        }
 
         // Register Blade component
         $this->app->afterResolving('blade.compiler', function ($blade) {

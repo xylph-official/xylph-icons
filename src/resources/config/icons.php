@@ -23,7 +23,7 @@ return [
 
     'libraries' => [
         'solar' => [
-            'path' => 'vendor/xylph/xylph-icons/resources/icons/solar',
+            'path' => 'vendor/xylph-official/xylph-icons/resources/icons/solar',
             'styles' => [
                 'bold-duotone',
                 'bold',
@@ -37,7 +37,7 @@ return [
 
         // 将来的に他のライブラリも追加可能
         // 'heroicons' => [
-        //     'path' => 'vendor/akihikotakai/icon-system/resources/icons/heroicons',
+        //     'path' => 'vendor/xylph-official/xylph-icons/resources/icons/heroicons',
         //     'styles' => ['outline', 'solid', 'mini'],
         //     'pattern' => '{style}/{name}.svg',
         // ],

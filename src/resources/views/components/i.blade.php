@@ -7,7 +7,7 @@
 
     // ライブラリ設定からパスを取得
     $libraryConfig = config('icons.libraries.' . $iconLibrary);
-    $libraryPath = $libraryConfig['path'] ?? 'vendor/akihikotakai/icon-system/resources/icons/' . $iconLibrary;
+    $libraryPath = $libraryConfig['path'] ?? 'vendor/xylph-official/xylph-icons/resources/icons/' . $iconLibrary;
 
     // SVGファイルパスを構築
     $svgPath = base_path($libraryPath . '/' . $type . '-' . $iconVariant . '.svg');
