@@ -1,0 +1,31 @@
+{
+    "name": "xylph-official/xylph-icons",
+    "description": "Unified icon system for Laravel with 7,404 Solar Icons. Simple API with type-safe parameters and easy variant switching.",
+    "keywords": ["laravel", "icons", "solar-icons", "blade", "components", "svg", "xylph"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xylph",
+            "email": "hello@xylph.dev"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Xylph\\Icons\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Xylph\\Icons\\XylphIconsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
