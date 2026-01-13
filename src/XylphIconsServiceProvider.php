@@ -4,6 +4,8 @@ namespace Xylph\Icons;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Xylph\Icons\Commands\IconsInstall;
+use Xylph\Icons\View\Components\Icon;
 
 class XylphIconsServiceProvider extends ServiceProvider
 {
@@ -22,15 +24,17 @@ class XylphIconsServiceProvider extends ServiceProvider
             __DIR__ . '/resources/config/icons.php' => config_path('icons.php'),
         ], 'xylph-icons-config');
 
-        // Load views from package (for <x-xylph-icons::components.i>)
+        // Load views from package
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'xylph-icons');
 
-        // Register <x-i> only if not already defined in project
-        // Project's resources/views/components/i.blade.php takes priority
-        if (!file_exists(resource_path('views/components/i.blade.php'))) {
-            Blade::anonymousComponentPath(
-                __DIR__ . '/resources/views/components'
-            );
+        // Commands
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                IconsInstall::class,
+            ]);
         }
+
+        // Register <x-i> component
+        Blade::component('i', Icon::class);
     }
 }
